@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL – Iconic Pots and Leaves | Plant Catalog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        brand: {
+                            green: '#065f46',
+                            dark: '#064e3b',
+                            deeper: '#022c22',
+                            light: '#ecfdf5',
+                            cream: '#f0fdf4',
+                            mint: '#d1fae5',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::selection { background: #065f46; color: #fff; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #ecfdf5; }
+        ::-webkit-scrollbar-thumb { background: #a7f3d0; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6ee7b7; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; }
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        .card-hover:hover .card-img {
+            filter: grayscale(0) brightness(1.05);
+            transform: scale(1.05);
+        }
+        .card-hover:hover .card-overlay { opacity: 0; }
+        .card-hover:hover .card-glow { opacity: 0.6; }
+        .card-hover:hover { border-color: #a7f3d0; box-shadow: 0 10px 40px -10px rgba(16,185,129,0.2); }
+
+        .scroll-reveal { opacity: 0; transform: translateY(40px); transition: all 0.7s ease-out; }
+        .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .float-anim { animation: float 3s ease-in-out infinite; }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track { animation: marquee 30s linear infinite; }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        .lightbox-active { overflow: hidden; }
+        #lightbox { transition: opacity 0.3s ease, visibility 0.3s ease; }
+
+        .green-gradient-text {
+            background: linear-gradient(135deg, #065f46, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-brand-cream text-brand-deeper font-sans antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-40 h-16 flex items-center px-6 bg-white/85 backdrop-blur-xl border-b border-emerald-100 shadow-sm">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-emerald-700 rounded-lg flex items-center justify-center">
+                    <iconify-icon icon="lucide:leaf" class="text-white text-lg"></iconify-icon>
+                </div>
+                <div>
+                    <span class="text-sm font-bold tracking-wider uppercase text-emerald-800">IPL</span>
+                    <span class="hidden sm:inline text-[10px] font-medium tracking-widest uppercase text-emerald-500 ml-2">Iconic Pots & Leaves</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#catalog" class="text-sm font-medium tracking-wide text-emerald-700 hover:text-emerald-900 transition-colors duration-300">Catalog</a>
+                <a href="#about" class="text-sm font-medium tracking-wide text-emerald-700 hover:text-emerald-900 transition-colors duration-300">About</a>
+                <a href="#contact" class="text-sm font-medium tracking-wide text-emerald-700 hover:text-emerald-900 transition-colors duration-300">Contact</a>
+            </div>
+            <a href="https://wa.me/919720186903" target="_blank" class="flex items-center gap-2 bg-emerald-700 text-white px-5 py-2.5 rounded-lg text-sm font-semibold tracking-wide hover:bg-emerald-800 active:scale-95 transition-all duration-300 shadow-lg shadow-emerald-200">
+                <iconify-icon icon="lucide:message-circle" class="text-base"></iconify-icon>
+                <span class="hidden sm:inline">Inquire</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://z-cdn-media.chatglm.cn/files/ef9fb90f-31ad-4f64-b7ae-7856e4c3046d.jpeg?auth_key=1879687474-ddb91150ceb24b2b9458cced0ff396d2-0-51ae0926c45f61a60e65555ca6513115" alt="Hero" class="w-full h-full object-cover opacity-40 contrast-110" onerror="this.style.display='none'">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-cream via-brand-cream/70 to-brand-cream/40"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-7xl mx-auto">
+            <div class="animate-fade-in-up">
+                <p class="text-xs font-bold tracking-[0.35em] uppercase text-emerald-600 mb-6 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:leaf" class="text-emerald-500"></iconify-icon>
+                    Premium Nursery & Plant Catalog
+                    <iconify-icon icon="lucide:leaf" class="text-emerald-500"></iconify-icon>
+                </p>
+            </div>
+            <h1 class="text-5xl md:text-8xl lg:text-[120px] font-semibold tracking-tighter uppercase leading-none animate-fade-in-up delay-100">
+                <span class="text-emerald-900">Iconic</span><br>
+                <span class="green-gradient-text">Pots & Leaves</span>
+            </h1>
+            <p class="mt-8 text-emerald-800/70 font-light text-base md:text-lg max-w-xl mx-auto leading-relaxed animate-fade-in-up delay-200">
+                Curated collection of premium palms, bamboos, and ornamental plants — nurtured with care for your landscape and garden.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-300">
+                <a href="#catalog" class="bg-emerald-700 text-white px-8 py-3.5 rounded-lg text-sm font-semibold tracking-wide uppercase hover:bg-emerald-800 active:scale-95 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-emerald-200">
+                    <iconify-icon icon="lucide:grid-3x3" class="text-base"></iconify-icon>
+                    Browse Catalog
+                </a>
+                <a href="#contact" class="border-2 border-emerald-300 text-emerald-800 px-8 py-3.5 rounded-lg text-sm font-semibold tracking-wide uppercase hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <iconify-icon icon="lucide:arrow-down" class="text-emerald-400 text-2xl"></iconify-icon>
+        </div>
+    </section>
+
+    <!-- Marquee Strip -->
+    <div class="border-y border-emerald-200 py-4 overflow-hidden bg-emerald-700">
+        <div class="marquee-track flex items-center gap-8 whitespace-nowrap w-max">
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Aerika Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Bamboo</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Botal Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Ficus</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Madhukamini</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Messanger</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Morpankhi</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Pencil Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Phoenix Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Sapotia Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Aerika Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Bamboo</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Botal Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Ficus</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Madhukamini</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Messanger</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Morpankhi</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Pencil Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Phoenix Palm</span>
+            <span class="text-emerald-400">✦</span>
+            <span class="text-xs font-bold tracking-[0.3em] uppercase text-emerald-200">Sapotia Palm</span>
+            <span class="text-emerald-400">✦</span>
+        </div>
+    </div>
+
+    <!-- Catalog Section -->
+    <section id="catalog" class="px-6 py-24 md:py-32">
+        <div class="max-w-7xl mx-auto">
+            <div class="scroll-reveal text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.35em] uppercase text-emerald-600 mb-4 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:flower-2" class="text-base"></iconify-icon>
+                    Our Collection
+                </p>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900">Plant Catalog</h2>
+                <p class="mt-4 text-emerald-800/60 font-light max-w-lg mx-auto">Explore our handpicked selection of premium plants — each nurtured with expertise and ready to transform your spaces.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="scroll-reveal flex flex-wrap items-center justify-center gap-3 mb-12">
+                <button onclick="filterPlants('all')" class="filter-btn active-filter px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-lg border-2 border-emerald-700 bg-emerald-700 text-white transition-all duration-300" data-filter="all">All</button>
+                <button onclick="filterPlants('palm')" class="filter-btn px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-lg border-2 border-emerald-200 text-emerald-700 bg-white hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" data-filter="palm">Palms</button>
+                <button onclick="filterPlants('shrub')" class="filter-btn px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-lg border-2 border-emerald-200 text-emerald-700 bg-white hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" data-filter="shrub">Shrubs</button>
+                <button onclick="filterPlants('special')" class="filter-btn px-5 py-2.5 text-xs font-semibold tracking-wider uppercase rounded-lg border-2 border-emerald-200 text-emerald-700 bg-white hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300" data-filter="special">Special</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- 1. Aerika Palm -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="palm">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/b3ee93d0-e876-4961-941f-be8522064482.jpeg?auth_key=1879687474-81167cf902a74b7593410c35877a7b16-0-86dd699f575155f21004e18eabf30216" alt="Aerika Palm" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Aerika Palm')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Palm</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Aerika Palm</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Lush palm with vibrant green fronds, ideal for outdoor landscaping. Thrives in bright natural light and brings tropical elegance to any space.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Aerika%20Palm" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/b3ee93d0-e876-4961-941f-be8522064482.jpeg?auth_key=1879687474-81167cf902a74b7593410c35877a7b16-0-86dd699f575155f21004e18eabf30216', 'Aerika Palm')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Bamboo -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="special">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/adf1b8a8-74c3-4328-8c3d-b1503b8169c5.jpeg?auth_key=1879687474-04e8401c603d4572ab38f183616764e0-0-14a07fa6663d8c37e9d5746c99d0b7df" alt="Bamboo" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Bamboo')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-amber-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Special</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-green-400 to-lime-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Bamboo</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Dense clusters of slender green bamboo, perfect for natural fencing and privacy screens. Grows vigorously in outdoor natural environments.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Bamboo" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/adf1b8a8-74c3-4328-8c3d-b1503b8169c5.jpeg?auth_key=1879687474-04e8401c603d4572ab38f183616764e0-0-14a07fa6663d8c37e9d5746c99d0b7df', 'Bamboo')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Botal Palm -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="palm">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/ef9fb90f-31ad-4f64-b7ae-7856e4c3046d.jpeg?auth_key=1879687474-ddb91150ceb24b2b9458cced0ff396d2-0-51ae0926c45f61a60e65555ca6513115" alt="Botal Palm" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Botal Palm')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Palm</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Botal Palm</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Broad, elegant palm with lush green fronds showcasing deep-to-light green gradients. A stunning choice for outdoor gardens and landscapes.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Botal%20Palm" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/ef9fb90f-31ad-4f64-b7ae-7856e4c3046d.jpeg?auth_key=1879687474-ddb91150ceb24b2b9458cced0ff396d2-0-51ae0926c45f61a60e65555ca6513115', 'Botal Palm')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Fycus (Ficus) -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="shrub">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/05da1065-b4ef-406c-8321-1a43be3c6f69.jpeg?auth_key=1879687474-0ae0c686914440098d4aa177ed74441d-0-d10b5fd47255f9c7a8e9d43a95a1f904" alt="Ficus" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Ficus')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-lime-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Shrub</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-lime-400 to-green-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Ficus</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Dense, bright-green foliage shrub perfect for hedging and landscaping. Hardy and low-maintenance, ideal for outdoor planting in nurseries.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Ficus" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/05da1065-b4ef-406c-8321-1a43be3c6f69.jpeg?auth_key=1879687474-0ae0c686914440098d4aa177ed74441d-0-d10b5fd47255f9c7a8e9d43a95a1f904', 'Ficus')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Madhukamini -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="shrub">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/90cf8aa8-b433-4a4d-9545-0338d4481b01.jpeg?auth_key=1879687474-3e35fc10ef1045f1aa78f677d6086163-0-39acf1bee2ff2e0044db29a04d0286b6" alt="Madhukamini" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Madhukamini')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-lime-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Shrub</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-green-400 to-lime-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Madhukamini</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Fragrant flowering shrub with dense, lush green foliage. Known for its sweet-scented white flowers, perfect for gardens and aromatic landscapes.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Madhukamini" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/90cf8aa8-b433-4a4d-9545-0338d4481b01.jpeg?auth_key=1879687474-3e35fc10ef1045f1aa78f677d6086163-0-39acf1bee2ff2e0044db29a04d0286b6', 'Madhukamini')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Messanger -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="special">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/cd972792-c950-452c-899c-a1ae436506c1.jpeg?auth_key=1879687474-229a2983bf7c483abd3020e0005f2c98-0-da66058ed0e7f7da61b8d28ab370390e" alt="Messanger" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Messanger')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-amber-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Special</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-yellow-400 to-emerald-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Messanger</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Striking variegated plant with yellow-white striped elongated leaves radiating outward. A bold ornamental choice for decorative landscaping.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Messanger" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/cd972792-c950-452c-899c-a1ae436506c1.jpeg?auth_key=1879687474-229a2983bf7c483abd3020e0005f2c98-0-da66058ed0e7f7da61b8d28ab370390e', 'Messanger')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Morpankhi -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="shrub">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/37f0b492-4f43-4ee5-bf84-ff707efdc0fe.jpeg?auth_key=1879687474-161cd2d5686e489bb4065f7aaf6cec2a-0-8675cf1bfc5368272f3d94a7a8e38093" alt="Morpankhi" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Morpankhi')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-lime-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Shrub</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-emerald-400 to-lime-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Morpankhi</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Elegant Thuja conifer with dense, fan-shaped evergreen foliage. Excellent for borders, hedges, and topiary in outdoor garden settings.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Morpankhi" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/37f0b492-4f43-4ee5-bf84-ff707efdc0fe.jpeg?auth_key=1879687474-161cd2d5686e489bb4065f7aaf6cec2a-0-8675cf1bfc5368272f3d94a7a8e38093', 'Morpankhi')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Pencil Palm -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="palm">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/64ce8e29-d186-4541-ab84-e6a598401343.jpeg?auth_key=1879687474-ed24428592b141b90e64d7edd242de9-0-fea4341e16dbac0273a1aafdb2e65e56" alt="Pencil Palm" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Pencil Palm')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Palm</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-teal-400 to-emerald-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Pencil Palm</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Sleek, tall conifer with slender pencil-like form. A sculptural accent plant ideal for entryways, pathways, and modern landscape designs.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Pencil%20Palm" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/64ce8e29-d186-4541-ab84-e6a598401343.jpeg?auth_key=1879687474-ed24428592b141b90e64d7edd242de9-0-fea4341e16dbac0273a1aafdb2e65e56', 'Pencil Palm')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Phoenix Palm -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="palm">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/4c293d4a-e167-4535-a8ce-130fbf3d672d.jpeg?auth_key=1879687474-8fe476678db94348b2f65b21b53e6522-0-cbdb89f8cf8901679c9010e4cfa34782" alt="Phoenix Palm" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Phoenix Palm')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Palm</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-amber-400 to-emerald-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Phoenix Palm</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Majestic Date Palm with feathery, arching fronds. A classic landscape centerpiece that brings grandeur and a tropical feel to any outdoor space.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Phoenix%20Palm" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/4c293d4a-e167-4535-a8ce-130fbf3d672d.jpeg?auth_key=1879687474-8fe476678db94348b2f65b21b53e6522-0-cbdb89f8cf8901679c9010e4cfa34782', 'Phoenix Palm')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Sapotia Palm -->
+                <div class="scroll-reveal card-hover group relative bg-white rounded-2xl border-2 border-emerald-100 overflow-hidden transition-all duration-500" data-category="palm">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://z-cdn-media.chatglm.cn/files/27630c8c-0f4b-48bd-a9b9-bbbfbf9e0258.jpeg?auth_key=1879687474-6578ea2836dd4a1ba27d32fe7c3eb2e3-0-b643c9d14d8c68dc0325625fb3f823b7" alt="Sapotia Palm" class="card-img w-full h-full object-cover grayscale-[30%] transition-all duration-500" onclick="openLightbox(this.src, 'Sapotia Palm')">
+                        <div class="card-overlay absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent transition-opacity duration-500"></div>
+                        <div class="absolute top-4 left-4 z-10">
+                            <span class="bg-emerald-600/90 backdrop-blur-sm text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-lg">Palm</span>
+                        </div>
+                        <div class="card-glow absolute -bottom-20 left-1/2 -translate-x-1/2 w-48 h-48 bg-gradient-to-r from-green-400 to-teal-400 rounded-full blur-[100px] opacity-0 transition-opacity duration-200"></div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <h3 class="text-lg font-semibold tracking-tight text-emerald-900">Sapotia Palm</h3>
+                            <iconify-icon icon="lucide:arrow-up-right" class="text-emerald-300 group-hover:text-emerald-700 transition-colors duration-300 text-lg"></iconify-icon>
+                        </div>
+                        <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Compact palm variety with vibrant, lush green fronds. Grown in bag containers for easy transport, perfect for patios, balconies, and garden beds.</p>
+                        <div class="mt-4 flex items-center gap-3">
+                            <a href="https://wa.me/919720186903?text=Hi%2C%20I'm%20interested%20in%20Sapotia%20Palm" target="_blank" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:message-circle" class="text-sm"></iconify-icon>
+                                Enquire
+                            </a>
+                            <span class="text-emerald-200">|</span>
+                            <button onclick="openLightbox('https://z-cdn-media.chatglm.cn/files/27630c8c-0f4b-48bd-a9b9-bbbfbf9e0258.jpeg?auth_key=1879687474-6578ea2836dd4a1ba27d32fe7c3eb2e3-0-b643c9d14d8c68dc0325625fb3f823b7', 'Sapotia Palm')" class="flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-emerald-700 hover:text-emerald-900 transition-colors duration-300">
+                                <iconify-icon icon="lucide:expand" class="text-sm"></iconify-icon>
+                                View
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="px-6 py-24 md:py-32 bg-emerald-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="scroll-reveal">
+                    <p class="text-xs font-bold tracking-[0.35em] uppercase text-emerald-300 mb-4">About Us</p>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-white">Rooted in Quality,<br><span class="text-emerald-300">Growing with Trust</span></h2>
+                    <p class="mt-6 text-emerald-100/80 font-light leading-relaxed">
+                        <strong class="text-white font-medium">IPL – Iconic Pots and Leaves</strong> is a premium plant nursery dedicated to providing the finest quality palms, shrubs, bamboos, and ornamental plants. Located in the heart of India, we cultivate each plant with expert care, ensuring vibrant health and striking beauty for every landscape project.
+                    </p>
+                    <p class="mt-4 text-emerald-100/80 font-light leading-relaxed">
+                        Whether you're a landscape architect, garden designer, or a home gardening enthusiast — our curated collection offers something iconic for every green space.
+                    </p>
+                    <div class="mt-8 grid grid-cols-3 gap-6">
+                        <div class="bg-emerald-700/50 rounded-xl p-4 text-center">
+                            <p class="text-3xl font-bold text-white">10+</p>
+                            <p class="text-[10px] text-emerald-300 font-bold tracking-widest uppercase mt-1">Varieties</p>
+                        </div>
+                        <div class="bg-emerald-700/50 rounded-xl p-4 text-center">
+                            <p class="text-3xl font-bold text-white">100%</p>
+                            <p class="text-[10px] text-emerald-300 font-bold tracking-widest uppercase mt-1">Nursery Grown</p>
+                        </div>
+                        <div class="bg-emerald-700/50 rounded-xl p-4 text-center">
+                            <p class="text-3xl font-bold text-white">500+</p>
+                            <p class="text-[10px] text-emerald-300 font-bold tracking-widest uppercase mt-1">Happy Clients</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-reveal relative group">
+                    <div class="relative overflow-hidden rounded-2xl shadow-2xl">
+                        <img src="https://picsum.photos/seed/green-nursery-lush/600/500.jpg" alt="Nursery" class="w-full h-[500px] object-cover group-hover:scale-105 transition-transform duration-700">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full blur-[120px] opacity-30"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="px-6 py-24 md:py-32 bg-brand-mint/50">
+        <div class="max-w-7xl mx-auto">
+            <div class="scroll-reveal text-center mb-16">
+                <p class="text-xs font-bold tracking-[0.35em] uppercase text-emerald-600 mb-4 flex items-center justify-center gap-2">
+                    <iconify-icon icon="lucide:sparkles" class="text-base"></iconify-icon>
+                    Why IPL
+                </p>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900">Why Choose Us</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="scroll-reveal bg-white border-2 border-emerald-100 rounded-2xl p-8 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-all duration-300">
+                        <iconify-icon icon="lucide:shield-check" class="text-2xl text-emerald-700"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold tracking-tight text-emerald-900 mb-3">Quality Assured</h3>
+                    <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Every plant is nursery-grown and quality-checked before delivery, ensuring you receive only the healthiest specimens.</p>
+                </div>
+                <div class="scroll-reveal bg-white border-2 border-emerald-100 rounded-2xl p-8 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-all duration-300">
+                        <iconify-icon icon="lucide:truck" class="text-2xl text-emerald-700"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold tracking-tight text-emerald-900 mb-3">Easy Transport</h3>
+                    <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Plants are cultivated in portable containers and bags for safe, damage-free transportation to your location.</p>
+                </div>
+                <div class="scroll-reveal bg-white border-2 border-emerald-100 rounded-2xl p-8 hover:border-emerald-300 hover:shadow-xl hover:shadow-emerald-100/50 transition-all duration-500 group">
+                    <div class="w-14 h-14 rounded-xl bg-emerald-100 flex items-center justify-center mb-6 group-hover:bg-emerald-200 transition-all duration-300">
+                        <iconify-icon icon="lucide:headphones" class="text-2xl text-emerald-700"></iconify-icon>
+                    </div>
+                    <h3 class="text-lg font-semibold tracking-tight text-emerald-900 mb-3">Expert Guidance</h3>
+                    <p class="text-sm text-emerald-800/60 font-light leading-relaxed">Get personalized plant care advice and landscaping consultation directly from our experienced horticulture team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="px-6 py-24 md:py-32">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="scroll-reveal">
+                    <p class="text-xs font-bold tracking-[0.35em] uppercase text-emerald-600 mb-4 flex items-center gap-2">
+                        <iconify-icon icon="lucide:phone" class="text-base"></iconify-icon>
+                        Get In Touch
+                    </p>
+                    <h2 class="text-3xl md:text-4xl font-semibold tracking-tight text-emerald-900">Let's Grow<br><span class="green-gradient-text">Together</span></h2>
+                    <p class="mt-6 text-emerald-800/60 font-light leading-relaxed max-w-md">
+                        Ready to transform your space with iconic plants? Reach out to us for inquiries, bulk orders, or landscaping consultations.
+                    </p>
+
+                    <div class="mt-10 space-y-6">
+                        <div class="flex items-start gap-4 bg-white rounded-xl p-4 border border-emerald-100">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:user" class="text-emerald-700 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-500 mb-1">Contact Person</p>
+                                <p class="text-emerald-900 font-semibold">Rahul Bhardawaj</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white rounded-xl p-4 border border-emerald-100">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:phone" class="text-emerald-700 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-500 mb-1">Phone / WhatsApp</p>
+                                <a href="tel:+919720186903" class="text-emerald-900 font-semibold hover:text-emerald-700 transition-colors duration-300">+91 9720186903</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 bg-white rounded-xl p-4 border border-emerald-100">
+                            <div class="w-12 h-12 rounded-xl bg-emerald-100 flex items-center justify-center flex-shrink-0">
+                                <iconify-icon icon="lucide:mail" class="text-emerald-700 text-xl"></iconify-icon>
+                            </div>
+                            <div>
+                                <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-500 mb-1">Email</p>
+                                <a href="mailto:iconicpotsandleaves@gmail.com" class="text-emerald-900 font-semibold hover:text-emerald-700 transition-colors duration-300 break-all">iconicpotsandleaves@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="https://wa.me/919720186903" target="_blank" class="flex items-center gap-2 bg-emerald-700 text-white px-6 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-emerald-800 active:scale-95 transition-all duration-300 shadow-lg shadow-emerald-200">
+                            <iconify-icon icon="lucide:message-circle" class="text-base"></iconify-icon>
+                            WhatsApp Us
+                        </a>
+                        <a href="tel:+919720186903" class="flex items-center gap-2 border-2 border-emerald-300 text-emerald-800 px-6 py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-emerald-50 hover:border-emerald-400 transition-all duration-300">
+                            <iconify-icon icon="lucide:phone" class="text-base"></iconify-icon>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Inquiry Form -->
+                <div class="scroll-reveal">
+                    <div class="bg-white border-2 border-emerald-100 rounded-2xl p-8 md:p-10 shadow-xl shadow-emerald-100/30">
+                        <h3 class="text-lg font-semibold tracking-tight text-emerald-900 mb-6 flex items-center gap-2">
+                            <iconify-icon icon="lucide:send" class="text-emerald-600"></iconify-icon>
+                            Quick Inquiry
+                        </h3>
+                        <form id="inquiry-form" onsubmit="submitInquiry(event)">
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-2 block">Your Name</label>
+                                    <input type="text" id="inq-name" required class="w-full bg-emerald-50/50 border-2 border-emerald-100 rounded-xl px-4 py-3 text-sm text-emerald-900 placeholder:text-emerald-300 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition-all duration-300" placeholder="Enter your name">
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-2 block">Phone Number</label>
+                                    <input type="tel" id="inq-phone" required class="w-full bg-emerald-50/50 border-2 border-emerald-100 rounded-xl px-4 py-3 text-sm text-emerald-900 placeholder:text-emerald-300 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition-all duration-300" placeholder="+91 XXXXXXXXXX">
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-2 block">Plant Interest</label>
+                                    <select id="inq-plant" class="w-full bg-emerald-50/50 border-2 border-emerald-100 rounded-xl px-4 py-3 text-sm text-emerald-900 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition-all duration-300">
+                                        <option value="">Select a plant</option>
+                                        <option value="Aerika Palm">Aerika Palm</option>
+                                        <option value="Bamboo">Bamboo</option>
+                                        <option value="Botal Palm">Botal Palm</option>
+                                        <option value="Ficus">Ficus</option>
+                                        <option value="Madhukamini">Madhukamini</option>
+                                        <option value="Messanger">Messanger</option>
+                                        <option value="Morpankhi">Morpankhi</option>
+                                        <option value="Pencil Palm">Pencil Palm</option>
+                                        <option value="Phoenix Palm">Phoenix Palm</option>
+                                        <option value="Sapotia Palm">Sapotia Palm</option>
+                                        <option value="Multiple / Other">Multiple / Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-[10px] font-bold tracking-widest uppercase text-emerald-600 mb-2 block">Message</label>
+                                    <textarea id="inq-message" rows="3" class="w-full bg-emerald-50/50 border-2 border-emerald-100 rounded-xl px-4 py-3 text-sm text-emerald-900 placeholder:text-emerald-300 focus:border-emerald-400 focus:ring-2 focus:ring-emerald-100 focus:outline-none transition-all duration-300 resize-none" placeholder="Tell us about your requirements..."></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-emerald-700 text-white py-3.5 rounded-xl text-sm font-semibold tracking-wide uppercase hover:bg-emerald-800 active:scale-95 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-emerald-200">
+                                    <iconify-icon icon="lucide:send" class="text-base"></iconify-icon>
+                                    Send via WhatsApp
+                                </button>
+                            </div>
+                        </form>
+                        <div id="form-success" class="hidden mt-4 p-4 bg-emerald-50 border-2 border-emerald-200 rounded-xl text-center">
+                            <p class="text-emerald-700 text-sm font-medium">✓ Redirecting to WhatsApp...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 py-16 bg-emerald-900">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-9 h-9 bg-emerald-600 rounded-lg flex items-center justify-center">
+                            <iconify-icon icon="lucide:leaf" class="text-white text-lg"></iconify-icon>
+                        </div>
+                        <span class="text-sm font-bold tracking-wider uppercase text-white">IPL</span>
+                    </div>
+                    <p class="text-emerald-200/60 font-light text-sm leading-relaxed max-w-sm">
+                        Iconic Pots and Leaves — Your trusted source for premium palms, shrubs, and ornamental plants. Cultivating green excellence since day one.
+                    </p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <a href="https://wa.me/919720186903" target="_blank" class="w-10 h-10 rounded-xl bg-emerald-800 flex items-center justify-center text-emerald-300 hover:bg-emerald-700 hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:message-circle" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="mailto:iconicpotsandleaves@gmail.com" class="w-10 h-10 rounded-xl bg-emerald-800 flex items-center justify-center text-emerald-300 hover:bg-emerald-700 hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:mail" class="text-lg"></iconify-icon>
+                        </a>
+                        <a href="tel:+919720186903" class="w-10 h-10 rounded-xl bg-emerald-800 flex items-center justify-center text-emerald-300 hover:bg-emerald-700 hover:text-white transition-all duration-300">
+                            <iconify-icon icon="lucide:phone" class="text-lg"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-400 mb-4">Quick Links</p>
+                    <ul class="space-y-3">
+                        <li><a href="#catalog" class="text-sm text-emerald-200/60 hover:text-white transition-colors duration-300">Catalog</a></li>
+                        <li><a href="#about" class="text-sm text-emerald-200/60 hover:text-white transition-colors duration-300">About Us</a></li>
+                        <li><a href="#contact" class="text-sm text-emerald-200/60 hover:text-white transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-[10px] font-bold tracking-widest uppercase text-emerald-400 mb-4">Contact</p>
+                    <ul class="space-y-3">
+                        <li class="text-sm text-emerald-200/60">Rahul Bhardawaj</li>
+                        <li><a href="tel:+919720186903" class="text-sm text-emerald-200/60 hover:text-white transition-colors duration-300">+91 9720186903</a></li>
+                        <li><a href="mailto:iconicpotsandleaves@gmail.com" class="text-sm text-emerald-200/60 hover:text-white transition-colors duration-300 break-all">iconicpotsandleaves@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-emerald-800 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-xs text-emerald-200/40">© 2025 IPL – Iconic Pots and Leaves. All rights reserved.</p>
+                <p class="text-xs text-emerald-200/30">Designed with 🌿 for green spaces</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919720186903" target="_blank" class="fixed bottom-6 right-6 z-40 w-16 h-16 bg-emerald-600 hover:bg-emerald-500 rounded-2xl flex items-center justify-center shadow-2xl shadow-emerald-300/50 hover:scale-110 active:scale-95 transition-all duration-300 float-anim">
+        <iconify-icon icon="lucide:message-circle" class="text-white text-2xl"></iconify-icon>
+    </a>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-emerald-950/90 backdrop-blur-md flex items-center justify-center p-6 opacity-0 invisible" onclick="closeLightbox(event)">
+        <button onclick="closeLightbox(event, true)" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 z-10">
+            <iconify-icon icon="lucide:x" class="text-xl"></iconify-icon>
+        </button>
+        <div class="max-w-4xl max-h-[85vh] relative" onclick="event.stopPropagation()">
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl">
+            <p id="lightbox-title" class="text-center mt-4 text-sm font-medium tracking-wide text-emerald-200"></p>
+        </div>
+    </div>
+
+    <script>
+        // Scroll Reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => { entry.target.classList.add('visible'); }, index * 80);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Filter Plants
+        function filterPlants(category) {
+            const cards = document.querySelectorAll('#product-grid > div');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-700', 'text-white', 'border-emerald-700');
+                btn.classList.add('bg-white', 'text-emerald-700', 'border-emerald-200');
+            });
+
+            const activeBtn = document.querySelector(`[data-filter="${category}"]`);
+            activeBtn.classList.add('bg-emerald-700', 'text-white', 'border-emerald-700');
+            activeBtn.classList.remove('bg-white', 'text-emerald-700', 'border-emerald-200');
+
+            cards.forEach(card => {
+                const cardCat = card.dataset.category;
+                if (category === 'all' || cardCat === category) {
+                    card.style.display = '';
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    setTimeout(() => { card.style.display = 'none'; }, 300);
+                }
+            });
+        }
+
+        // Lightbox
+        function openLightbox(src, title) {
+            const lightbox = document.getElementById('lightbox');
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox-title').textContent = title;
+            lightbox.classList.remove('opacity-0', 'invisible');
+            lightbox.classList.add('opacity-100', 'visible');
+            document.body.classList.add('lightbox-active');
+        }
+
+        function closeLightbox(event, force = false) {
+            if (force || event.target === document.getElementById('lightbox')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.add('opacity-0', 'invisible');
+                lightbox.classList.remove('opacity-100', 'visible');
+                document.body.classList.remove('lightbox-active');
+            }
+        }
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(null, true); });
+
+        // Inquiry Form → WhatsApp
+        function submitInquiry(e) {
+            e.preventDefault();
+            const name = document.getElementById('inq-name').value.trim();
+            const phone = document.getElementById('inq-phone').value.trim();
+            const plant = document.getElementById('inq-plant').value;
+            const message = document.getElementById('inq-message').value.trim();
+
+            let waMessage = `Hello IPL! I'd like to inquire about your plants.%0A%0A`;
+            waMessage += `*Name:* ${name}%0A`;
+            waMessage += `*Phone:* ${phone}%0A`;
+            if (plant) waMessage += `*Plant Interest:* ${plant}%0A`;
+            if (message) waMessage += `*Message:* ${message}%0A`;
+            waMessage += `%0AThank you!`;
+
+            document.getElementById('form-success').classList.remove('hidden');
+            setTimeout(() => {
+                window.open(`https://wa.me/919720186903?text=${waMessage}`, '_blank');
+                document.getElementById('form-success').classList.add('hidden');
+            }, 800);
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+    </script>
+</body>
+</html>
